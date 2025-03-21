@@ -1,0 +1,732 @@
+.filters-section {
+    margin: 20px 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .filter-group label {
+    font-weight: 500;
+  }
+  
+  .filter-group input,
+  .filter-group select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .reset-button {
+    padding: 8px 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .reset-button:hover {
+    background: #d32f2f;
+  }
+  
+  .schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .add-button {
+    padding: 8px 15px;
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .add-button:hover {
+    background: #45a049;
+  }
+  
+  .schedules-section {
+    margin-top: 20px;
+  }
+  
+  .date-group {
+    margin-bottom: 15px;
+  }
+  
+  .date-header {
+    background: #f5f5f5;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  
+  .date-header:hover {
+    background: #e8e8e8;
+  }
+  
+  .toggle-icon {
+    font-size: 12px;
+  }
+  
+  .toggle-icon.expanded {
+    transform: rotate(180deg);
+  }
+  
+  .schedule-list {
+    margin-top: 10px;
+    padding-left: 15px;
+  }
+  
+  .schedule-card {
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .schedule-card.active {
+    border-left: 4px solid #4CAF50;
+  }
+  
+  .schedule-card.archived {
+    border-left: 4px solid #757575;
+    opacity: 0.8;
+  }
+  
+  .schedule-time {
+    font-weight: 500;
+    font-size: 16px;
+  }
+  
+  .schedule-details {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .capacity {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .status {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .schedule-card.active .status {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  .schedule-card.archived .status {
+    background: #757575;
+    color: white;
+  }
+  
+  .no-schedules {
+    text-align: center;
+    color: #666;
+    margin: 20px 0;
+  }
+  
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    max-width: 90%;
+  }
+  
+  .add-schedule-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .form-group label {
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+  }
+  
+  .modal-buttons button {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .modal-buttons button:first-child {
+    background: #f44336;
+    color: white;
+  }
+  
+  .modal-buttons button:first-child:hover {
+    background: #d32f2f;
+  }
+  
+  .modal-buttons button:last-child {
+    background: #4CAF50;
+    color: white;
+  }
+  
+  .modal-buttons button:last-child:hover {
+    background: #45a049;
+  }
+  .view-appointments-button {
+    padding: 5px 10px;
+    background: #2196F3;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+    margin-top: 10px;
+  }
+  
+  .view-appointments-button:hover {
+    background: #1976D2;
+  }
+  
+  .appointments-list {
+    margin-top: 10px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    border: 1px solid #eee;
+  }
+  
+  .appointment-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .appointment-item:last-child {
+    border-bottom: none;
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  
+  .patients-list {
+    margin-top: 15px;
+  }
+  
+  .patient-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .patient-item:last-child {
+    border-bottom: none;
+  }
+  
+  .patient-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .patient-details {
+    flex: 1;
+  }
+  
+  .patient-details p {
+    margin: 5px 0;
+  }
+  
+  .close-modal-button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .close-modal-button:hover {
+    background: #d32f2f;
+  }
+  .patient-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .patient-item:last-child {
+    border-bottom: none;
+  }
+  
+  .patient-avatar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .patient-details {
+    flex: 1;
+  }
+  
+  .patient-details p {
+    margin: 5px 0;
+  }
+  
+  .appointment-status {
+    margin-top: 10px;
+  }
+  
+  .appointment-status label {
+    font-weight: 500;
+    margin-right: 10px;
+  }
+  
+  .appointment-status select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  .patient-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .patient-item:last-child {
+    border-bottom: none;
+  }
+  
+  .patient-avatar img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .patient-details {
+    flex: 1;
+  }
+  
+  .patient-details p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .patient-details strong {
+    color: #000;
+  }
+  
+  .appointment-status {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .appointment-status label {
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .appointment-status select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    background: #fff;
+    cursor: pointer;
+  }
+  
+  .close-modal-button {
+    margin-top: 15px;
+    padding: 8px 15px;
+    background: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+  }
+  
+  .close-modal-button:hover {
+    background: #d32f2f;
+  }
+
+  /* Стили для карточки пациента */
+.patient-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+  background: #ffffff;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.patient-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.patient-avatar img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #4CAF50;
+}
+
+.patient-details {
+  flex: 1;
+}
+
+.patient-details p {
+  margin: 8px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.patient-details strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Стили для кнопки добавления записи */
+.add-record-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: #2196F3;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-top: 15px;
+  width: 100%;
+}
+
+.add-record-button:hover {
+  background-color: #1976D2;
+  transform: scale(1.02);
+}
+
+.add-record-button:active {
+  transform: scale(0.98);
+}
+
+/* Иконка для кнопки */
+.add-record-button svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
+/* Стили для модального окна */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 450px;
+  max-width: 90%;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: #333;
+  text-align: center;
+}
+
+.add-record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #2196F3;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.modal-buttons button:first-child {
+  background-color: #f44336;
+  color: white;
+}
+
+.modal-buttons button:first-child:hover {
+  background-color: #d32f2f;
+}
+
+.modal-buttons button:last-child {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.modal-buttons button:last-child:hover {
+  background-color: #45a049;
+}
+
+.modal-buttons button:active {
+  transform: scale(0.98);
+}
+/* Добавьте эти стили в ваш файл doctor_schedul_style.css */
+
+.profile-icon {
+  position: relative;
+  cursor: pointer;
+  margin-left: auto; /* Сдвигаем иконку профиля вправо */
+}
+
+.profile-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background-color: white;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  min-width: 150px;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f5f5f5;
+}
+
+.nav-menu{
+  margin-left: auto;
+}
+.view-history-button {
+  padding: 5px 10px;
+  background: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+  margin-top: 10px;
+}
+
+.view-history-button:hover {
+  background: #f57c00;
+}
+
+.medical-history-list {
+  margin-top: 15px;
+}
+
+.medical-history-item {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+}
+
+.medical-history-item:last-child {
+  border-bottom: none;
+}
+
+.medical-history-item p {
+  margin: 5px 0;
+}
